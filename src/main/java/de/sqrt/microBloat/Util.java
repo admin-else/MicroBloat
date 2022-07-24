@@ -53,9 +53,32 @@ public class Util {
 		if(ConfigHandler.get("autoJump")==1)client.options.getAutoJump().setValue(false);
 	}
 	
+	private static String extraSpecialStates(int state,String key) {
+		if(key == "background") {
+			if(state==0)return Text.translatable("microbloat.settingstate.normal").getString();
+			if(state==1)return Text.translatable("microbloat.setting.background.noSpin").getString();
+			if(state==2)return Text.translatable("microbloat.setting.background.dirt").getString();
+		}
+		
+		
+		return null;
+	}
+	
+	private static String getSettingState(int state,String key) {
+		if(extraSpecialStates(state, key)!=null)return extraSpecialStates(state, key);
+		if(state==0)return Text.translatable("microbloat.settingstate.normal").getString();
+		if(state==1)return Text.translatable("microbloat.settingstate.hidden").getString();
+		if(state==2) {
+			if(Text.translatable("microbloat.setting."+key+"specialoption").getString().equals("microbloat.setting."+key+"specialoption"))
+				return Text.translatable("microbloat.settingstate.special").getString();
+			return Text.translatable("microbloat.setting."+key+"specialoption").getString();
+		}
+		return "invalvid state";
+	}
+	
 	public static ButtonWidget getSettingsButton(String key,int x,int y,int widht,boolean booleanSetting) {
-		return new ButtonWidget(x, y, widht, 20, Text.literal(key+": "+ConfigHandler.get(key)), button -> {
-			button.setMessage(Text.literal(key+": "+ConfigHandler.toggle(key,booleanSetting)));
+		return new ButtonWidget(x, y, widht, 20, Text.translatable("microbloat.setting."+key, getSettingState(ConfigHandler.get(key), key)), button -> {
+			button.setMessage(Text.translatable("microbloat.setting."+key, getSettingState(ConfigHandler.toggle(key,booleanSetting), key)));
 		});
 
 	}

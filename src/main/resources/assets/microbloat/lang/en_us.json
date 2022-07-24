@@ -1,3 +1,37 @@
 { 
-	"microbloat.settings.Copyright": "Copyright: %d"
+	"microbloat.settings.title": "Microbloat...", //Settings button
+	"microbloat.settings.inGame": "In Game...",
+	"microbloat.settings.titleScreen": "Title Screen...",
+	"microbloat.settings.pause": "Pause Menu...",
+	"microbloat.settings.options": "Options...",
+	"microbloat.settings.microsoft": "Microsoft...",
+	"microbloat.setting.Copyright": "Copyright: %d", //Title
+	"microbloat.setting.menu.online": "Realms: %d", //Title
+	"microbloat.setting.button.accessibility": "Accessibility Button: %d", //Title
+	"microbloat.setting.button.language": "Language Button: %d", //Title
+	"microbloat.setting.menu.quit": "Quit Button: %d", //Title
+	"microbloat.setting.edition": "Edition: %d", //Title
+	"microbloat.setting.splash": "Splash Text: %d", //Title 
+	"microbloat.setting.background": "Background: %d", //Title
+	"microbloat.setting.background.noSpin": "No Spin",
+	"microbloat.setting.background.dirt": "Dirt",
+	"microbloat.setting.Telemetry": "Snoper: %d", //Micro Soft
+	"microbloat.setting.death_score": "Death Score: %d",//In Game
+	"microbloat.setting.advancements": "Advancements: %d", //Pase 
+	"microbloat.setting.stats": "Stats: %d", //Pause
+	"microbloat.setting.sendFeedback": "Send Feedback: %d", //PAUSE 
+	"microbloat.setting.reportBugs": "Report Bugs: %d", //PAUSE
+	"microbloat.setting.shareToLan": "Share to Lan: %d", //PAUSE
+	"microbloat.setting.difficulty_lock": "Difficulty Lock: %d", //OPTIONS
+	"microbloat.setting.options.online": "Online Settings: %d", //OPTIONS
+	"microbloat.setting.options.difficulty": "Difficulty: %d", //OPTIONS
+	"microbloat.setting.accessibility_guide": "Accessibility Guide: %d", //OPTIONS
+	"microbloat.setting.autoJump": "Auto Jump: %d", //OPTIONS
+	"microbloat.setting.mouse_settings": "Mouse Settings: %d", //OPTIONS
+	"microbloat.settingstate.normal": "Normal",
+	"microbloat.settingstate.hidden": "Hidden",
+	"microbloat.settingstate.special": "Special",
+	
+	"test": "test"
 }
+

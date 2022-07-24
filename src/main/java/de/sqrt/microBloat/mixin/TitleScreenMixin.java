@@ -54,8 +54,6 @@ public class TitleScreenMixin extends Screen {
 		Util.deletButton(buttons, "button.accessibility");
 		Util.deletButton(buttons, "button.language");
 		Util.deletButton(buttons, "Copyright");
-		
-		addDrawableChild(Util.getSettingsButton("edition",0,0,150,true));
 	}
 	
 	private static Identifier getEDITION_TITLE_TEXTURE() {

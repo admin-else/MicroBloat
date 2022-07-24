@@ -24,7 +24,7 @@ public class ConfigHandler {
 	public static LinkedHashMap<String, Integer> config = new LinkedHashMap<String, Integer>();
 
 	public static final String[] settings = new String[] { "menu.online", "button.accessibility", "button.language",
-			"menu.quit", "Copyright", "edition", "splash", "no_spin", "dirt_background", "Telemetry", "death_score",
+			"menu.quit", "Copyright", "edition", "splash", "background", "Telemetry", "death_score",
 			"advancements", "stats", "sendFeedback", "reportBugs", "shareToLan", "difficulty_lock", "options.online",
 			"options.difficulty", "accessibility_guide", "autoJump", "mouse_settings" };
 

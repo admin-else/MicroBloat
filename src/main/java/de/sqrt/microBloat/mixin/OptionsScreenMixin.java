@@ -7,9 +7,9 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import de.sqrt.microBloat.MicroBloatScreen;
 import de.sqrt.microBloat.Util;
 import de.sqrt.microBloat.config.ConfigHandler;
+import de.sqrt.microBloat.screens.MicroBloatScreen;
 import net.fabricmc.fabric.api.client.screen.v1.Screens;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.option.OptionsScreen;
@@ -49,8 +49,13 @@ public class OptionsScreenMixin extends Screen {
 			Util.getButton(buttons, "difficulty_lock").visible = false;
 		}
 		
-		addDrawableChild(new ButtonWidget(this.width / 2 - 155, this.height / 6 + 148 - 6, 150, 20, Text.translatable("microbloat.settings.title"), button -> {
+		addDrawableChild(new ButtonWidget(this.width / 2 - 155, this.height / 6 + 145 - 6, 150, 20, Text.translatable("microbloat.settings.title"), button -> {
 			client.setScreen(new MicroBloatScreen(this));
 		}));
+		
+		ClickableWidget doneButton= Util.getButton(buttons,"done");
+		doneButton.x = this.width / 2 + 5;
+		doneButton.y = this.height / 6 + 145 - 6;
+		doneButton.setWidth(150);
 	}
 }
