@@ -3,14 +3,10 @@ package de.sqrt.microBloat;
 import java.util.Iterator;
 import java.util.List;
 
-import com.mojang.text2speech.Narrator;
-import com.mojang.text2speech.NarratorDummy;
-
 import de.sqrt.microBloat.config.ConfigHandler;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.gui.widget.ClickableWidget;
-import net.minecraft.client.util.NarratorManager;
 import net.minecraft.text.Text;
 
 public class Util {
@@ -20,7 +16,7 @@ public class Util {
 	
 
 	public static boolean deletButton(List<ClickableWidget> buttons, String text) {
-		for (Iterator iterator = buttons.iterator(); iterator.hasNext();) {
+		for (Iterator<ClickableWidget> iterator = buttons.iterator(); iterator.hasNext();) {
 			ClickableWidget button = (ClickableWidget) iterator.next();
 		if (button.getMessage().toString().contains(text) && ConfigHandler.get(text) == 1) {
 			button.visible = false;
@@ -35,7 +31,7 @@ public class Util {
 	}
 	
 	public static ClickableWidget getButton(List<ClickableWidget> buttons, String text) {
-		for (Iterator iterator = buttons.iterator(); iterator.hasNext();) {
+		for (Iterator<ClickableWidget> iterator = buttons.iterator(); iterator.hasNext();) {
 			ClickableWidget clickableWidget = (ClickableWidget) iterator.next();
 			if(clickableWidget.getMessage().toString().contains(text))return clickableWidget;
 		}
@@ -43,7 +39,7 @@ public class Util {
 	}
 	
 	public static void printbuttonNames(List<ClickableWidget> buttons) {
-		for (Iterator iterator = buttons.iterator(); iterator.hasNext();) {
+		for (Iterator<ClickableWidget> iterator = buttons.iterator(); iterator.hasNext();) {
 			ClickableWidget clickableWidget = (ClickableWidget) iterator.next();
 			MicroBloat.LOGGER.info(clickableWidget.getMessage().toString());
 		}

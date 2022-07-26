@@ -45,5 +45,4 @@ public class MicroBloatScreen extends Screen {
 		drawCenteredText(matrices, this.textRenderer, this.title, this.width / 2, 15, 0xFFFFFF);
 		super.render(matrices, mouseX, mouseY, delta);
 	}
-
 }

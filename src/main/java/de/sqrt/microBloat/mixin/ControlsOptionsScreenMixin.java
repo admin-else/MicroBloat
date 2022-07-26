@@ -8,6 +8,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import de.sqrt.microBloat.Util;
+import de.sqrt.microBloat.config.ConfigHandler;
 import net.fabricmc.fabric.api.client.screen.v1.Screens;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.option.ControlsOptionsScreen;
@@ -27,7 +28,14 @@ public class ControlsOptionsScreenMixin extends GameOptionsScreen{
 	
 	@Inject(method = "init",at = @At("TAIL"))
 	protected void init(CallbackInfo ci) {
-		if(Util.deletButton(buttons, "mouse_settings")) {
+		
+		ClickableWidget doneButton = Util.getButton(buttons, "done");
+		
+		doneButton.y = this.width / 2 - 155;
+		doneButton.x = (this.width / 2 - 155)+160;
+		doneButton.setWidth(150);
+		
+		if(ConfigHandler.get("mouse_settings")==2) {
 			ClickableWidget mouse_settingsButton = Util.getButton(buttons, "mouse_settings");
 			ClickableWidget sensitivityButton = client.options.getMouseSensitivity().createButton(gameOptions, height, height, width);
 			sensitivityButton.x = mouse_settingsButton.x;
@@ -35,12 +43,18 @@ public class ControlsOptionsScreenMixin extends GameOptionsScreen{
 			sensitivityButton.setWidth(150);
 			addDrawableChild(sensitivityButton);
 		}
+		 
 		if(Util.deletButton(buttons, "autoJump")) {
-			Util.getButton(buttons, "done").y = Util.getButton(buttons, "autoJump").y;
-			Util.getButton(buttons, "done").x = Util.getButton(buttons, "autoJump").x;
-			Util.getButton(buttons, "done").setWidth(310);
+			doneButton.y = Util.getButton(buttons, "autoJump").y;
+			doneButton.x = Util.getButton(buttons, "autoJump").x;
+			doneButton.setWidth(310);
 		}
 		
+		if(Util.deletButton(buttons, "mouse_settings")){
+			ClickableWidget keysButton = Util.getButton(buttons, "controls.keybinds");
+			keysButton.x = this.width / 2 - 155;
+			keysButton.setWidth(310);
+		}
 	}
 	
 }
