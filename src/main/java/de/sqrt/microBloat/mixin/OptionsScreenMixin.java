@@ -36,24 +36,29 @@ public class OptionsScreenMixin extends Screen {
 
 		if (ConfigHandler.get("menu.online") == 1 && ConfigHandler.get("options.online") == 0
 				&& !(this.client.world != null && this.client.isIntegratedServerRunning())) {
-			ClickableWidget allowServerListingButton = client.options.getAllowServerListing().createButton(client.options,this.width / 2 + 5, this.height / 6 - 12 + 24,150);
-			allowServerListingButton.y = Util.getButton(buttons, "options.fov").y;//this.height / 6 - 12 + 24;
+			ClickableWidget allowServerListingButton = client.options.getAllowServerListing()
+					.createButton(client.options, this.width / 2 + 5, this.height / 6 - 12 + 24, 150);
+			allowServerListingButton.y = Util.getButton(buttons, "options.fov").y;// this.height / 6 - 12 + 24;
 			allowServerListingButton.x = this.width / 2 + 5;
 			addDrawableChild(allowServerListingButton);
 			Util.getButton(buttons, "options.online").visible = false;
 		}
-		
-		if(Util.deletButton(buttons, "options.online"))Util.getButton(buttons, "fov").setWidth(310);
-		if(Util.deletButton(buttons, "options.difficulty")) {
+
+		if (Util.deletButton(buttons, "online")) {
+			Util.getButton(buttons, "fov").setWidth(310);
+			Util.getButton(buttons, "allowServerListing").visible = false;
+		}
+		if (Util.deletButton(buttons, "options.difficulty")) {
 			Util.getButton(buttons, "fov").setWidth(310);
 			Util.getButton(buttons, "difficulty_lock").visible = false;
 		}
-		
-		addDrawableChild(new ButtonWidget(this.width / 2 - 155, this.height / 6 + 145 - 6, 150, 20, Text.translatable("microbloat.settings.title"), button -> {
-			client.setScreen(new MicroBloatScreen(this));
-		}));
-		
-		ClickableWidget doneButton= Util.getButton(buttons,"done");
+
+		addDrawableChild(new ButtonWidget(this.width / 2 - 155, this.height / 6 + 145 - 6, 150, 20,
+				Text.translatable("microbloat.settings.title"), button -> {
+					client.setScreen(new MicroBloatScreen(this));
+				}));
+
+		ClickableWidget doneButton = Util.getButton(buttons, "done");
 		doneButton.x = this.width / 2 + 5;
 		doneButton.y = this.height / 6 + 145 - 6;
 		doneButton.setWidth(150);

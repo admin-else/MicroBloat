@@ -1,5 +1,6 @@
 package de.sqrt.microBloat.screens;
 
+import de.sqrt.microBloat.Util;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
 import net.minecraft.client.util.math.MatrixStack;
@@ -17,6 +18,8 @@ public class InGameSettingsScreen extends Screen{
 	
 	@Override
 	protected void init() {
+		addDrawableChild(Util.getSettingsButton("death_score", width / 2 - 155, this.height / 6 + 48 - 6, 150, true));
+		
 		addDrawableChild(new ButtonWidget(width / 2 - 100, height / 6 + 168, 200, 20, ScreenTexts.DONE, button -> client.setScreen(parent)));
 	}
 	

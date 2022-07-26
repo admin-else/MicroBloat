@@ -49,16 +49,14 @@ public class Util {
 		}
 	}
 	
-	public static void onUpdate() {
-		if(ConfigHandler.get("autoJump")==1)client.options.getAutoJump().setValue(false);
-	}
-	
 	private static String extraSpecialStates(int state,String key) {
 		if(key == "background") {
 			if(state==0)return Text.translatable("microbloat.settingstate.normal").getString();
 			if(state==1)return Text.translatable("microbloat.setting.background.noSpin").getString();
 			if(state==2)return Text.translatable("microbloat.setting.background.dirt").getString();
 		}
+		
+		if(key=="Telemetry"&&state==1)return Text.translatable("microbloat.setting.background.disenabled").getString(); 
 		
 		
 		return null;

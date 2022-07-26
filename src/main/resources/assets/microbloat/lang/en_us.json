@@ -21,9 +21,9 @@
 	"microbloat.setting.stats": "Stats: %d", //Pause
 	"microbloat.setting.sendFeedback": "Send Feedback: %d", //PAUSE 
 	"microbloat.setting.reportBugs": "Report Bugs: %d", //PAUSE
-	"microbloat.setting.shareToLan": "Share to Lan: %d", //PAUSE
+	"microbloat.setting.shareToLan": "Share to LAN: %d", //PAUSE
 	"microbloat.setting.difficulty_lock": "Difficulty Lock: %d", //OPTIONS
-	"microbloat.setting.options.online": "Online Settings: %d", //OPTIONS
+	"microbloat.setting.online": "Online Settings: %d", //OPTIONS
 	"microbloat.setting.options.difficulty": "Difficulty: %d", //OPTIONS
 	"microbloat.setting.accessibility_guide": "Accessibility Guide: %d", //OPTIONS
 	"microbloat.setting.autoJump": "Auto Jump: %d", //OPTIONS
@@ -31,6 +31,7 @@
 	"microbloat.settingstate.normal": "Normal",
 	"microbloat.settingstate.hidden": "Hidden",
 	"microbloat.settingstate.special": "Special",
+	"microbloat.setting.background.disenabled": "Disabled",
 	
 	"test": "test"
 }

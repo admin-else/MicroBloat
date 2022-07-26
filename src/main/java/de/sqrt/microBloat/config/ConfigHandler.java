@@ -10,8 +10,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.stream.JsonWriter;
 
-import de.sqrt.microBloat.Util;
-
+import de.sqrt.microBloat.MicroBloat;
 import static com.google.gson.JsonParser.parseReader;
 
 import net.fabricmc.loader.api.FabricLoader;
@@ -25,7 +24,7 @@ public class ConfigHandler {
 
 	public static final String[] settings = new String[] { "menu.online", "button.accessibility", "button.language",
 			"menu.quit", "Copyright", "edition", "splash", "background", "Telemetry", "death_score",
-			"advancements", "stats", "sendFeedback", "reportBugs", "shareToLan", "difficulty_lock", "options.online",
+			"advancements", "stats", "sendFeedback", "reportBugs", "shareToLan", "difficulty_lock", "online",
 			"options.difficulty", "accessibility_guide", "autoJump", "mouse_settings" };
 
 	private static void write() {
@@ -55,13 +54,16 @@ public class ConfigHandler {
 				for (int i = 0; i < settings.length; i++) {
 					config.put(settings[i], readInt(jo, settings[i]));
 				}
-				Util.onUpdate();
 			} catch (Exception e) {
+				e.printStackTrace();
 				new File(CONFIG_PATH.toString()).delete();
 				createConfig();
 			}
-		} else
+		} else {
+			MicroBloat.LOGGER.error("The config deos not exist!");
 			createConfig();
+		}
+			
 	}
 
 	private static int readInt(JsonObject json, String key) {
@@ -70,6 +72,7 @@ public class ConfigHandler {
 	}
 
 	private static void createConfig() {
+		MicroBloat.LOGGER.info("createdConfig");
 		config.clear();
 		for (int i = 0; i < settings.length; i++) {
 			config.put(settings[i], 0);
