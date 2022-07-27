@@ -44,11 +44,11 @@ public class OptionsScreenMixin extends Screen {
 			Util.getButton(buttons, "options.online").visible = false;
 		}
 
-		if (Util.deletButton(buttons, "online")) {
+		if (Util.deleteButton(buttons, "online")) {
 			Util.getButton(buttons, "fov").setWidth(310);
 			Util.getButton(buttons, "allowServerListing").visible = false;
 		}
-		if (Util.deletButton(buttons, "options.difficulty")) {
+		if (Util.deleteButton(buttons, "options.difficulty")) {
 			Util.getButton(buttons, "fov").setWidth(310);
 			Util.getButton(buttons, "difficulty_lock").visible = false;
 		}

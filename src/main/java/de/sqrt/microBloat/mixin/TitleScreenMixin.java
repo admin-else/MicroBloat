@@ -38,28 +38,30 @@ public class TitleScreenMixin extends Screen {
 
 	@Inject(method = "init", at = @At("TAIL"))
 	protected void init(CallbackInfo info) {
-		if (Util.deletButton(buttons, "menu.online")) {
+		if (Util.deleteButton(buttons, "menu.online")) {
 			Util.getButton(buttons, "options").y = this.height / 4 + 48 + 24 * 2;
 			Util.getButton(buttons, "quit").y = this.height / 4 + 48 + 24 * 2;
 			Util.getButton(buttons, "access").y = this.height / 4 + 48 + 24 * 2;
 			Util.getButton(buttons, "lang").y = this.height / 4 + 48 + 24 * 2;
 			this.client.options.getRealmsNotifications().setValue(false);
 		}
-		if (Util.deletButton(buttons, "menu.quit")) {
+		if (Util.deleteButton(buttons, "menu.quit")) {
 			Util.getButton(buttons, "options").setWidth(200);
 		}
 		if (ConfigHandler.get("splash") == 1) {
 			splashText = null;
 		}
-		Util.deletButton(buttons, "button.accessibility");
-		Util.deletButton(buttons, "button.language");
-		Util.deletButton(buttons, "Copyright");
+		Util.deleteButton(buttons, "button.accessibility");
+		Util.deleteButton(buttons, "button.language");
+		Util.deleteButton(buttons, "Copyright");
 	}
-	
+
 	private static Identifier getEDITION_TITLE_TEXTURE() {
 		Identifier edition = new Identifier("textures/gui/title/edition.png");
-		if(ConfigHandler.get("edition") == 1)edition = new Identifier("microbloat", "textures/gui/title/edition_empty.png");
-		if(ConfigHandler.get("edition") == 2)edition = new Identifier("microbloat", "textures/gui/title/edition_safe_minecraft.png"); //EASTER EGG
+		if (ConfigHandler.get("edition") == 1)
+			edition = new Identifier("microbloat", "textures/gui/title/edition_empty.png");
+		if (ConfigHandler.get("edition") == 2)
+			edition = new Identifier("microbloat", "textures/gui/title/edition_safe_minecraft.png"); // EASTER EGG
 		return edition;
 	}
 }

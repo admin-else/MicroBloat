@@ -1,5 +1,6 @@
 package de.sqrt.microBloat.screens;
 
+import de.sqrt.microBloat.MicroBloat;
 import de.sqrt.microBloat.Util;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ButtonWidget;
@@ -25,7 +26,7 @@ public class OptionsSettingsScreen extends Screen {
 				Util.getSettingsButton("options.difficulty", this.width / 2 - 155, this.height / 6 + 72 - 6, 150, true));
 		addDrawableChild(
 				Util.getSettingsButton("accessibility_guide", this.width / 2 + 5, this.height / 6 + 72 - 6, 150, true));
-		addDrawableChild(Util.getSettingsButton("autoJump", this.width / 2 - 155, this.height / 6 + 96 - 6, 150, true));
+		addDrawableChild(Util.getSettingsButton("autoJump", this.width / 2 - 155, this.height / 6 + 96 - 6, 150, MicroBloat.LEGIT));
 		addDrawableChild(
 				Util.getSettingsButton("mouse_settings", this.width / 2 + 5, this.height / 6 + 96 - 6, 150, false));
 
