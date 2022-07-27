@@ -23,9 +23,9 @@ public class ConfigHandler {
 	public static LinkedHashMap<String, Integer> config = new LinkedHashMap<String, Integer>();
 
 	public static final String[] settings = new String[] { "menu.online", "button.accessibility", "button.language",
-			"menu.quit", "Copyright", "edition", "splash", "background", "Telemetry", "death_score",
-			"advancements", "stats", "sendFeedback", "reportBugs", "shareToLan", "difficulty_lock", "online",
-			"options.difficulty", "accessibility_guide", "autoJump", "mouse_settings" };
+			"menu.quit", "Copyright", "edition", "splash", "background", "Telemetry", "death_score", "advancements",
+			"stats", "sendFeedback", "reportBugs", "shareToLan", "difficulty_lock", "online", "options.difficulty",
+			"accessibility_guide", "autoJump", "mouse_settings" };
 
 	private static void write() {
 		try (final FileWriter fw = new FileWriter(CONFIG_PATH.toString()); final JsonWriter jw = new JsonWriter(fw)) {
@@ -63,7 +63,7 @@ public class ConfigHandler {
 			MicroBloat.LOGGER.error("The config deos not exist!");
 			createConfig();
 		}
-			
+
 	}
 
 	private static int readInt(JsonObject json, String key) {
@@ -90,19 +90,19 @@ public class ConfigHandler {
 		config.put(key, value);
 		write();
 	}
-	
+
 	public static int toggle(String key, Boolean booleanSetting) {
-		if(ConfigHandler.get(key)==0) {
+		if (ConfigHandler.get(key) == 0) {
 			ConfigHandler.put(key, 1);
 			return 1;
-		}else if(ConfigHandler.get(key)==1) {
-			if(booleanSetting) {
+		} else if (ConfigHandler.get(key) == 1) {
+			if (booleanSetting) {
 				ConfigHandler.put(key, 0);
 				return 0;
 			}
 			ConfigHandler.put(key, 2);
 			return 2;
-		}else {
+		} else {
 			ConfigHandler.put(key, 0);
 			return 0;
 		}

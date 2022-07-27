@@ -22,11 +22,12 @@ public class OptionsSettingsScreen extends Screen {
 		addDrawableChild(
 				Util.getSettingsButton("difficulty_lock", this.width / 2 - 155, this.height / 6 + 48 - 6, 150, true));
 		addDrawableChild(Util.getSettingsButton("online", this.width / 2 + 5, this.height / 6 + 48 - 6, 150, false));
-		addDrawableChild(
-				Util.getSettingsButton("options.difficulty", this.width / 2 - 155, this.height / 6 + 72 - 6, 150, true));
+		addDrawableChild(Util.getSettingsButton("options.difficulty", this.width / 2 - 155, this.height / 6 + 72 - 6,
+				150, true));
 		addDrawableChild(
 				Util.getSettingsButton("accessibility_guide", this.width / 2 + 5, this.height / 6 + 72 - 6, 150, true));
-		addDrawableChild(Util.getSettingsButton("autoJump", this.width / 2 - 155, this.height / 6 + 96 - 6, 150, MicroBloat.LEGIT));
+		addDrawableChild(Util.getSettingsButton("autoJump", this.width / 2 - 155, this.height / 6 + 96 - 6, 150,
+				MicroBloat.LEGIT));
 		addDrawableChild(
 				Util.getSettingsButton("mouse_settings", this.width / 2 + 5, this.height / 6 + 96 - 6, 150, false));
 

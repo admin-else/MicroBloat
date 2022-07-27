@@ -12,7 +12,7 @@ import net.minecraft.client.util.NarratorManager;
 
 @Mixin(NarratorManager.class)
 public class NarratorManagerMixin {
-	
+
 	@Shadow
 	@Final
 	@Mutable

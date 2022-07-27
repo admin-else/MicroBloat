@@ -13,63 +13,56 @@ import net.minecraft.util.math.Box;
 import net.minecraft.util.shape.VoxelShape;
 
 public class AutoJumpPlus {
-	
-	public static void tick()
-	{	
+
+	public static void tick() {
 		MinecraftClient MC = MinecraftClient.getInstance();
 		ClientPlayerEntity player = MC.player;
-		
-		if(MC.world==null||player==null||MicroBloat.LEGIT)return;
-		
+
+		if (MC.world == null || player == null || MicroBloat.LEGIT)
+			return;
+
 		player.stepHeight = 0.5F;
-		
-		if(!player.horizontalCollision)
+
+		if (!player.horizontalCollision)
 			return;
-		
-		if(!player.isOnGround() || player.isClimbing()
-			|| player.isTouchingWater() || player.isInLava())
+
+		if (!player.isOnGround() || player.isClimbing() || player.isTouchingWater() || player.isInLava())
 			return;
-		
-		if(player.input.movementForward == 0
-			&& player.input.movementSideways == 0)
+
+		if (player.input.movementForward == 0 && player.input.movementSideways == 0)
 			return;
-		
-		if(player.input.jumping)
+
+		if (player.input.jumping)
 			return;
-		
+
 		Box box = player.getBoundingBox().offset(0, 0.05, 0).expand(0.05);
-		
-		if(!MC.world.isSpaceEmpty(player, box.offset(0, 1, 0)))
+
+		if (!MC.world.isSpaceEmpty(player, box.offset(0, 1, 0)))
 			return;
-		
+
 		double stepHeight = -1;
-		
-		ArrayList<Box> blockCollisions =
-				StreamSupport.stream(MC.world.getCollisions(player, box).spliterator(), false)
-				.map(VoxelShape::getBoundingBox)
-				.collect(Collectors.toCollection(ArrayList::new));
-		
-		for(Box bb : blockCollisions)
-			if(bb.maxY > stepHeight)
+
+		ArrayList<Box> blockCollisions = StreamSupport.stream(MC.world.getCollisions(player, box).spliterator(), false)
+				.map(VoxelShape::getBoundingBox).collect(Collectors.toCollection(ArrayList::new));
+
+		for (Box bb : blockCollisions)
+			if (bb.maxY > stepHeight)
 				stepHeight = bb.maxY;
-			
+
 		stepHeight = stepHeight - player.getY();
-		
-		if(stepHeight < 0 || stepHeight > 1)
+
+		if (stepHeight < 0 || stepHeight > 1)
 			return;
-		
+
 		ClientPlayNetworkHandler netHandler = player.networkHandler;
-		
-		netHandler.sendPacket(new PlayerMoveC2SPacket.PositionAndOnGround(
-			player.getX(), player.getY() + 0.42 * stepHeight, player.getZ(),
-			player.isOnGround()));
-		
-		netHandler.sendPacket(new PlayerMoveC2SPacket.PositionAndOnGround(
-			player.getX(), player.getY() + 0.753 * stepHeight, player.getZ(),
-			player.isOnGround()));
-		
-		player.setPosition(player.getX(), player.getY() + 1 * stepHeight,
-			player.getZ());
+
+		netHandler.sendPacket(new PlayerMoveC2SPacket.PositionAndOnGround(player.getX(),
+				player.getY() + 0.42 * stepHeight, player.getZ(), player.isOnGround()));
+
+		netHandler.sendPacket(new PlayerMoveC2SPacket.PositionAndOnGround(player.getX(),
+				player.getY() + 0.753 * stepHeight, player.getZ(), player.isOnGround()));
+
+		player.setPosition(player.getX(), player.getY() + 1 * stepHeight, player.getZ());
 	}
 
 }

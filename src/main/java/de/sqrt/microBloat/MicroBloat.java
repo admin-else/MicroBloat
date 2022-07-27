@@ -9,11 +9,11 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.minecraft.client.MinecraftClient;
 
-public class MicroBloat implements ModInitializer{
+public class MicroBloat implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger("microbloat");
-	
+
 	public static final boolean LEGIT = false;
-	
+
 	@Override
 	public void onInitialize() {
 		ConfigHandler.init();

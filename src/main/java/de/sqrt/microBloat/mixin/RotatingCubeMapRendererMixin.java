@@ -14,16 +14,19 @@ import net.minecraft.client.gui.RotatingCubeMapRenderer;
 
 @Mixin(RotatingCubeMapRenderer.class)
 public abstract class RotatingCubeMapRendererMixin {
-    @Shadow @Final private MinecraftClient client;
-    @Shadow private float time;
+	@Shadow
+	@Final
+	private MinecraftClient client;
+	@Shadow
+	private float time;
 
-    @Inject(method = "render", at = @At("HEAD"), cancellable = true)
-    public void render(float delta, float alpha, CallbackInfo info) {
-        if (ConfigHandler.get("background")==2) {
-            this.client.currentScreen.renderBackgroundTexture(0);
-            info.cancel();
-        } else if (ConfigHandler.get("background")==1) {
-            time -= delta;
-        }
-    }
+	@Inject(method = "render", at = @At("HEAD"), cancellable = true)
+	public void render(float delta, float alpha, CallbackInfo info) {
+		if (ConfigHandler.get("background") == 2) {
+			this.client.currentScreen.renderBackgroundTexture(0);
+			info.cancel();
+		} else if (ConfigHandler.get("background") == 1) {
+			time -= delta;
+		}
+	}
 }

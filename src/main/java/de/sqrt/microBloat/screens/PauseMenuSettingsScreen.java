@@ -23,7 +23,8 @@ public class PauseMenuSettingsScreen extends Screen {
 		addDrawableChild(Util.getSettingsButton("stats", this.width / 2 + 5, this.height / 6 + 48 - 6, 150, false));
 		addDrawableChild(
 				Util.getSettingsButton("sendFeedback", this.width / 2 - 155, this.height / 6 + 72 - 6, 150, false));
-		addDrawableChild(Util.getSettingsButton("reportBugs", this.width / 2 + 5, this.height / 6 + 72 - 6, 150, false));
+		addDrawableChild(
+				Util.getSettingsButton("reportBugs", this.width / 2 + 5, this.height / 6 + 72 - 6, 150, false));
 		addDrawableChild(
 				Util.getSettingsButton("shareToLan", this.width / 2 - 155, this.height / 6 + 96 - 6, 150, false));
 		addDrawableChild(new ButtonWidget(width / 2 - 100, height / 6 + 168, 200, 20, ScreenTexts.DONE,
