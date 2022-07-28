@@ -9,6 +9,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import de.sqrt.microBloat.Util;
 import de.sqrt.microBloat.config.ConfigHandler;
+import de.sqrt.microBloat.config.SettingState;
 import de.sqrt.microBloat.screens.MicroBloatScreen;
 import net.fabricmc.fabric.api.client.screen.v1.Screens;
 import net.minecraft.client.gui.screen.Screen;
@@ -28,13 +29,13 @@ public class OptionsScreenMixin extends Screen {
 
 	@Inject(method = "init", at = @At("TAIL"))
 	protected void init(CallbackInfo ci) {
-		if (ConfigHandler.get("difficulty_lock") == 1 && this.client.world != null
+		if (ConfigHandler.get("difficulty_lock") == SettingState.SPECIAL && this.client.world != null
 				&& this.client.isIntegratedServerRunning()) {
 			Util.getButton(buttons, "difficulty_lock").visible = false;
 			Util.getButton(buttons, "options.difficulty").setWidth(150);
 		}
 
-		if (ConfigHandler.get("menu.online") == 1 && ConfigHandler.get("options.online") == 0
+		if (ConfigHandler.get("menu.online") == SettingState.HIDDEN && ConfigHandler.get("options.online") == SettingState.NORMAL
 				&& !(this.client.world != null && this.client.isIntegratedServerRunning())) {
 			ClickableWidget allowServerListingButton = client.options.getAllowServerListing()
 					.createButton(client.options, this.width / 2 + 5, this.height / 6 - 12 + 24, 150);

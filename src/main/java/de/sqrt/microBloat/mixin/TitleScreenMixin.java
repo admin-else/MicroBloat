@@ -13,6 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import de.sqrt.microBloat.Util;
 import de.sqrt.microBloat.config.ConfigHandler;
+import de.sqrt.microBloat.config.SettingState;
 import net.fabricmc.fabric.api.client.screen.v1.Screens;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.TitleScreen;
@@ -48,7 +49,7 @@ public class TitleScreenMixin extends Screen {
 		if (Util.deleteButton(buttons, "menu.quit")) {
 			Util.getButton(buttons, "options").setWidth(200);
 		}
-		if (ConfigHandler.get("splash") == 1) {
+		if (ConfigHandler.get("splash") == SettingState.HIDDEN) {
 			splashText = null;
 		}
 		Util.deleteButton(buttons, "button.accessibility");
@@ -58,9 +59,9 @@ public class TitleScreenMixin extends Screen {
 
 	private static Identifier getEDITION_TITLE_TEXTURE() {
 		Identifier edition = new Identifier("textures/gui/title/edition.png");
-		if (ConfigHandler.get("edition") == 1)
+		if (ConfigHandler.get("edition") == SettingState.HIDDEN)
 			edition = new Identifier("microbloat", "textures/gui/title/edition_empty.png");
-		if (ConfigHandler.get("edition") == 2)
+		if (ConfigHandler.get("edition") == SettingState.SPECIAL)
 			edition = new Identifier("microbloat", "textures/gui/title/edition_safe_minecraft.png"); // EASTER EGG
 		return edition;
 	}

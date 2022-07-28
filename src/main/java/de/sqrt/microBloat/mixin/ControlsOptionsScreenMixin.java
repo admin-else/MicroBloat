@@ -9,6 +9,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import de.sqrt.microBloat.Util;
 import de.sqrt.microBloat.config.ConfigHandler;
+import de.sqrt.microBloat.config.SettingState;
 import net.fabricmc.fabric.api.client.screen.v1.Screens;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.option.ControlsOptionsScreen;
@@ -35,7 +36,7 @@ public class ControlsOptionsScreenMixin extends GameOptionsScreen{
 		doneButton.x = (this.width / 2 - 155)+160;
 		doneButton.setWidth(150);
 		
-		if(ConfigHandler.get("mouse_settings")==2) {
+		if(ConfigHandler.get("mouse_settings")==SettingState.SPECIAL) {
 			ClickableWidget mouse_settingsButton = Util.getButton(buttons, "mouse_settings");
 			ClickableWidget sensitivityButton = client.options.getMouseSensitivity().createButton(gameOptions, height, height, width);
 			sensitivityButton.x = mouse_settingsButton.x;

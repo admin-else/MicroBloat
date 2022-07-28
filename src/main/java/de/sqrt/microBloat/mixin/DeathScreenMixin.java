@@ -9,6 +9,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import de.sqrt.microBloat.config.ConfigHandler;
+import de.sqrt.microBloat.config.SettingState;
 import net.minecraft.client.gui.screen.DeathScreen;
 import net.minecraft.text.Text;
 
@@ -20,6 +21,6 @@ public class DeathScreenMixin {
 	
 	@Inject(method = "init", at = @At("TAIL"))
 	protected void init(CallbackInfo ci) {
-		if(ConfigHandler.get("death_score")==1)scoreText = Text.literal("");
+		if(ConfigHandler.get("death_score")==SettingState.HIDDEN)scoreText = Text.literal("");
 	}
 }

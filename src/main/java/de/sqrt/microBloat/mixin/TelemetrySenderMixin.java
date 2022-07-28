@@ -8,6 +8,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 import de.sqrt.microBloat.config.ConfigHandler;
+import de.sqrt.microBloat.config.SettingState;
 
 @Pseudo
 @Mixin(targets = "net.minecraft.client.util.telemetry.TelemetrySender")
@@ -18,7 +19,7 @@ public class TelemetrySenderMixin {
 												// issues if this does not work (: .
 												// Also credit to kb-1000 i copied his code from
 												// https://github.com/kb-1000/no-telemetry thanks.
-		if (ConfigHandler.get("Telemetry") == 1)
+		if (ConfigHandler.get("Telemetry") == SettingState.HIDDEN)
 			return true;
 		return false;
 	}

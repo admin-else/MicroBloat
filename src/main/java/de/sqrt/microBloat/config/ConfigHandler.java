@@ -17,6 +17,8 @@ import net.fabricmc.loader.api.FabricLoader;
 
 //FUCKIN DONE FINALLY (:<
 public class ConfigHandler {
+	
+	//TODO array with for each statement
 
 	private static final Path CONFIG_PATH = FabricLoader.getInstance().getConfigDir().resolve("microbloat.json");
 
@@ -60,7 +62,7 @@ public class ConfigHandler {
 				createConfig();
 			}
 		} else {
-			MicroBloat.LOGGER.error("The config deos not exist!");
+			MicroBloat.LOGGER.error("The config does not exist!");
 			createConfig();
 		}
 
@@ -80,31 +82,49 @@ public class ConfigHandler {
 		write();
 	}
 
-	public static int get(String key) {
-		if (config.get(key) == null)
-			return 0;
-		return config.get(key);
+	public static SettingState get(String key) {
+		return traslate(config.get(key));
+
 	}
 
-	public static void put(String key, int value) {
-		config.put(key, value);
+	public static void put(String key, SettingState state) {
+		config.put(key, traslateBackwards(state));
 		write();
 	}
 
-	public static int toggle(String key, Boolean booleanSetting) {
-		if (ConfigHandler.get(key) == 0) {
-			ConfigHandler.put(key, 1);
-			return 1;
-		} else if (ConfigHandler.get(key) == 1) {
-			if (booleanSetting) {
-				ConfigHandler.put(key, 0);
-				return 0;
-			}
-			ConfigHandler.put(key, 2);
-			return 2;
-		} else {
-			ConfigHandler.put(key, 0);
-			return 0;
+	public static SettingState toggle(String key, boolean booleanSetting) {
+		SettingState state = ConfigHandler.get(key);
+		if (state == SettingState.NORMAL) {
+			ConfigHandler.put(key, SettingState.HIDDEN);
+			return SettingState.HIDDEN;
 		}
+		if (state == SettingState.HIDDEN) {
+			if (booleanSetting) {
+				ConfigHandler.put(key, SettingState.NORMAL);
+				return SettingState.NORMAL;
+			}
+			ConfigHandler.put(key, SettingState.SPECIAL);
+			return SettingState.SPECIAL;
+		} else {
+			ConfigHandler.put(key, SettingState.NORMAL);
+			return SettingState.NORMAL;
+		}
+	}
+	
+	private static SettingState traslate(Integer value) {
+		switch (value) {
+		case 1:
+			return SettingState.HIDDEN;
+		case 2:
+			return SettingState.SPECIAL;
+		default:
+			return SettingState.NORMAL;
+		}
+	}
+	
+	private static int traslateBackwards(SettingState value) {
+		if(value==SettingState.NORMAL)return 0;
+		if(value==SettingState.HIDDEN)return 1;
+		return 2;
 	}
 }
