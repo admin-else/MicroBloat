@@ -83,8 +83,8 @@ public class ConfigHandler {
 	}
 
 	public static SettingState get(String key) {
-		return traslate(config.get(key));
-
+		Integer value = config.get(key);
+		return traslate(value);
 	}
 
 	public static void put(String key, SettingState state) {

@@ -9,6 +9,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import de.sqrt.microBloat.Util;
 import net.fabricmc.fabric.api.client.screen.v1.Screens;
+import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.gui.screen.GameMenuScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.widget.ClickableWidget;
@@ -52,8 +53,8 @@ public class GameMenuScreenMixin extends Screen {
 		reportBugsButton = Util.getButton(buttons, "reportBugs");
 		shareToLanButton = Util.getButton(buttons, "shareToLan");
 		optionsButton = Util.getButton(buttons, "options");
-		returnToMenuButton = (Util.getButton(buttons, "returnToMenu") == null ? Util.getButton(buttons, "conne")
-				: Util.getButton(buttons, "returnToMenu"));
+		returnToMenuButton = (MinecraftClient.getInstance().isIntegratedServerRunning() ? Util.getButton(buttons, "returnToMenu")
+				: Util.getButton(buttons, "conne"));
 
 		if (advancements && stats) {
 			if (sendFeedback && reportBugs) {

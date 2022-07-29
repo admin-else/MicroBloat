@@ -31,8 +31,9 @@ public class ControlsOptionsScreenMixin extends GameOptionsScreen{
 	protected void init(CallbackInfo ci) {
 		
 		ClickableWidget doneButton = Util.getButton(buttons, "done");
+		ClickableWidget autoJumpButton = Util.getButton(buttons, "autoJump");
 		
-		doneButton.y = Util.getButton(buttons, "autoJump").y;
+		doneButton.y = autoJumpButton.y;
 		doneButton.x = (this.width / 2 - 155)+160;
 		doneButton.setWidth(150);
 		
@@ -45,9 +46,10 @@ public class ControlsOptionsScreenMixin extends GameOptionsScreen{
 			addDrawableChild(sensitivityButton);
 		}
 		 
-		if(Util.deleteButton(buttons, "autoJump")) {
-			doneButton.y = Util.getButton(buttons, "autoJump").y;
-			doneButton.x = Util.getButton(buttons, "autoJump").x;
+		if(ConfigHandler.get("autoJump")!=SettingState.NORMAL) {
+			autoJumpButton.visible = false;
+			doneButton.y = autoJumpButton.y;
+			doneButton.x = autoJumpButton.x;
 			doneButton.setWidth(310);
 		}
 		

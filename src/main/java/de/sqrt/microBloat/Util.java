@@ -33,7 +33,7 @@ public final class Util {
 			if (clickableWidget.getMessage().toString().contains(text))
 				return clickableWidget;
 		}
-		return null;
+		throw new IllegalArgumentException("There is no button called "+text);
 	}
 
 	public static void printbuttonNames(List<ClickableWidget> buttons) {
@@ -66,10 +66,10 @@ public final class Util {
 		if (state == SettingState.HIDDEN)
 			return Text.translatable("microbloat.settingstate.hidden").getString();
 		if (state == SettingState.SPECIAL) {
-			if (Text.translatable("microbloat.setting." + key + "specialoption").getString()
-					.equals("microbloat.setting." + key + "specialoption"))
+			if (Text.translatable("microbloat.setting." + key + ".special").getString()
+					.equals("microbloat.setting." + key + ".special"))
 				return Text.translatable("microbloat.settingstate.special").getString();
-			return Text.translatable("microbloat.setting." + key + "specialoption").getString();
+			return Text.translatable("microbloat.setting." + key + ".special").getString();
 		}
 		return "invalid state";
 	}

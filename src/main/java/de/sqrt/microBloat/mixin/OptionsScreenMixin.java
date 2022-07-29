@@ -35,20 +35,20 @@ public class OptionsScreenMixin extends Screen {
 			Util.getButton(buttons, "options.difficulty").setWidth(150);
 		}
 
-		if (ConfigHandler.get("menu.online") == SettingState.HIDDEN && ConfigHandler.get("options.online") == SettingState.NORMAL
+		if (ConfigHandler.get("menu.online") == SettingState.HIDDEN
+				&& ConfigHandler.get("online") == SettingState.NORMAL
 				&& !(this.client.world != null && this.client.isIntegratedServerRunning())) {
 			ClickableWidget allowServerListingButton = client.options.getAllowServerListing()
 					.createButton(client.options, this.width / 2 + 5, this.height / 6 - 12 + 24, 150);
 			allowServerListingButton.y = Util.getButton(buttons, "options.fov").y;// this.height / 6 - 12 + 24;
 			allowServerListingButton.x = this.width / 2 + 5;
 			addDrawableChild(allowServerListingButton);
-			Util.getButton(buttons, "options.online").visible = false;
+			Util.getButton(buttons, "online").visible = false;
 		}
 
-		if (Util.deleteButton(buttons, "online")) {
+		if (Util.deleteButton(buttons, "online"))
 			Util.getButton(buttons, "fov").setWidth(310);
-			Util.getButton(buttons, "allowServerListing").visible = false;
-		}
+
 		if (Util.deleteButton(buttons, "options.difficulty")) {
 			Util.getButton(buttons, "fov").setWidth(310);
 			Util.getButton(buttons, "difficulty_lock").visible = false;

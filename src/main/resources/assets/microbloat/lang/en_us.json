@@ -27,7 +27,7 @@
 	"microbloat.setting.options.difficulty": "Difficulty: %d", //OPTIONS
 	"microbloat.setting.accessibility_guide": "Accessibility Guide: %d", //OPTIONS
 	"microbloat.setting.autoJump": "Auto Jump: %d", //OPTIONS
-	"microbloat.setting.autoJump.special": "Auto Jump+",
+	"microbloat.setting.autoJump.special": "Auto-Jump+",
 	"microbloat.setting.mouse_settings": "Mouse Settings: %d", //OPTIONS
 	"microbloat.settingstate.normal": "Normal",
 	"microbloat.settingstate.hidden": "Hidden",

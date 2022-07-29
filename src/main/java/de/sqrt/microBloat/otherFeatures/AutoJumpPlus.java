@@ -5,6 +5,8 @@ import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
 import de.sqrt.microBloat.MicroBloat;
+import de.sqrt.microBloat.config.ConfigHandler;
+import de.sqrt.microBloat.config.SettingState;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayNetworkHandler;
 import net.minecraft.client.network.ClientPlayerEntity;
@@ -18,7 +20,13 @@ public class AutoJumpPlus {
 		MinecraftClient MC = MinecraftClient.getInstance();
 		ClientPlayerEntity player = MC.player;
 
-		if (MC.world == null || player == null || MicroBloat.LEGIT)
+		if (player == null)
+			return;
+
+		if (MicroBloat.LEGIT)
+			return;
+		
+		if (!(ConfigHandler.get("autoJump") == SettingState.SPECIAL))
 			return;
 
 		player.stepHeight = 0.5F;
