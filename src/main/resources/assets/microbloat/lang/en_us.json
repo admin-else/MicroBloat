@@ -22,6 +22,7 @@
 	"microbloat.setting.sendFeedback": "Send Feedback: %d", //PAUSE 
 	"microbloat.setting.reportBugs": "Report Bugs: %d", //PAUSE
 	"microbloat.setting.shareToLan": "Share to LAN: %d", //PAUSE
+	"microbloat.setting.playerReporting": "Chat Reporting Button: %d", //MICROSOFT
 	"microbloat.setting.difficulty_lock": "Difficulty Lock: %d", //OPTIONS
 	"microbloat.setting.online": "Online Settings: %d", //OPTIONS
 	"microbloat.setting.options.difficulty": "Difficulty: %d", //OPTIONS

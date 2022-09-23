@@ -18,6 +18,7 @@ public class MicroBloat implements ModInitializer {
 	public void onInitialize() {
 		ConfigHandler.init();
 		ClientTickEvents.END_CLIENT_TICK.register(this::tick);
+		LOGGER.info(MinecraftClient.getInstance().getName());
 	}
 
 	private void tick(MinecraftClient client) {

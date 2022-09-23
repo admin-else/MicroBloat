@@ -27,7 +27,7 @@ public class ConfigHandler {
 	public static final String[] settings = new String[] { "menu.online", "button.accessibility", "button.language",
 			"menu.quit", "Copyright", "edition", "splash", "background", "Telemetry", "death_score", "advancements",
 			"stats", "sendFeedback", "reportBugs", "shareToLan", "difficulty_lock", "online", "options.difficulty",
-			"accessibility_guide", "autoJump", "mouse_settings" };
+			"accessibility_guide", "autoJump", "mouse_settings","playerReporting"};
 
 	private static void write() {
 		try (final FileWriter fw = new FileWriter(CONFIG_PATH.toString()); final JsonWriter jw = new JsonWriter(fw)) {
@@ -74,17 +74,16 @@ public class ConfigHandler {
 	}
 
 	private static void createConfig() {
-		MicroBloat.LOGGER.info("createdConfig");
 		config.clear();
 		for (int i = 0; i < settings.length; i++) {
 			config.put(settings[i], 0);
 		}
 		write();
+		MicroBloat.LOGGER.info("createdConfig");
 	}
 
 	public static SettingState get(String key) {
-		Integer value = config.get(key);
-		return traslate(value);
+		return traslate(config.get(key));
 	}
 
 	public static void put(String key, SettingState state) {

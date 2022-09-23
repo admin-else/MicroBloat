@@ -33,7 +33,7 @@ public final class Util {
 			if (clickableWidget.getMessage().toString().contains(text))
 				return clickableWidget;
 		}
-		throw new IllegalArgumentException("There is no button called "+text);
+		return null;
 	}
 
 	public static void printbuttonNames(List<ClickableWidget> buttons) {

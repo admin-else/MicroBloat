@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "microbloat",
-  "version": "${version}",
+  "version": "1.0.1",
 
   "name": "Micro Bloat",
   "description": "Removes useless features.",
@@ -9,12 +9,11 @@
     "Admin_Else"
   ],
   "contact": {
-    "homepage": "",
-    "sources": ""
+    "sources": "https://github.com/admin-else/MicroBloat"
   },
 
-  "license": "CC0-1.0",
-  "icon": "",
+  "license": "GLP-3",
+  "icon": "assets/microbloat/icon.png",
 
   "environment": "*",
   "entrypoints": {

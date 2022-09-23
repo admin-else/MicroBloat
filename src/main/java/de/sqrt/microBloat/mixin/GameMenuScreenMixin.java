@@ -40,20 +40,24 @@ public class GameMenuScreenMixin extends Screen {
 
 	@Inject(method = "initWidgets", at = @At("TAIL"))
 	private void initWidgets(CallbackInfo ci) {
-
 		advancements = Util.deleteButton(buttons, "advancements");
 		stats = Util.deleteButton(buttons, "stats");
 		sendFeedback = Util.deleteButton(buttons, "sendFeedback");
 		reportBugs = Util.deleteButton(buttons, "reportBugs");
-		shareToLan = Util.deleteButton(buttons, "shareToLan");
+		shareToLan = (Util.getButton(buttons, "shareToLan")!=null
+				? Util.deleteButton(buttons, "shareToLan")
+				: Util.deleteButton(buttons, "playerReporting"));
 
 		advancementsButton = Util.getButton(buttons, "advancements");
 		statsButton = Util.getButton(buttons, "stats");
 		sendFeedbackButton = Util.getButton(buttons, "sendFeedback");
 		reportBugsButton = Util.getButton(buttons, "reportBugs");
-		shareToLanButton = Util.getButton(buttons, "shareToLan");
+		shareToLanButton = (Util.getButton(buttons, "shareToLan")!=null
+				? Util.getButton(buttons, "shareToLan")
+				: Util.getButton(buttons, "playerReporting"));
 		optionsButton = Util.getButton(buttons, "options");
-		returnToMenuButton = (MinecraftClient.getInstance().isIntegratedServerRunning() ? Util.getButton(buttons, "returnToMenu")
+		returnToMenuButton = (MinecraftClient.getInstance().isIntegratedServerRunning()
+				? Util.getButton(buttons, "returnToMenu")
 				: Util.getButton(buttons, "conne"));
 
 		if (advancements && stats) {
