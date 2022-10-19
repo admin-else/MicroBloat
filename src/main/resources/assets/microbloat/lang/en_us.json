@@ -34,6 +34,8 @@
 	"microbloat.settingstate.hidden": "Hidden",
 	"microbloat.settingstate.special": "Special",
 	"microbloat.setting.disenabled": "Disabled",
+	"microbloat.setting.tutorial": "Tutorial: %d",
+	"microbloat.setting.recipe_toast": "Recipe Toast: %d",
 	
 	"test": "test"
 }

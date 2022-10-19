@@ -27,7 +27,7 @@ public class ConfigHandler {
 	public static final String[] settings = new String[] { "menu.online", "button.accessibility", "button.language",
 			"menu.quit", "Copyright", "edition", "splash", "background", "Telemetry", "death_score", "advancements",
 			"stats", "sendFeedback", "reportBugs", "shareToLan", "difficulty_lock", "online", "options.difficulty",
-			"accessibility_guide", "autoJump", "mouse_settings","playerReporting"};
+			"accessibility_guide", "autoJump", "mouse_settings","playerReporting", "tutorial", "recipe_toast"};
 
 	private static void write() {
 		try (final FileWriter fw = new FileWriter(CONFIG_PATH.toString()); final JsonWriter jw = new JsonWriter(fw)) {
