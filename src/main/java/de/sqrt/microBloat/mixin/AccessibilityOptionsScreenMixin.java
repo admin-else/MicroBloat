@@ -25,14 +25,14 @@ public class AccessibilityOptionsScreenMixin extends SimpleOptionsScreen {
 	private static SimpleOption<?>[] getOptions(GameOptions gameOptions) {
 		if (ConfigHandler.get("autoJump") == SettingState.NORMAL)
 			return new SimpleOption[] { gameOptions.getShowSubtitles(), gameOptions.getTextBackgroundOpacity(),
-					gameOptions.getBackgroundForChatOnly(), gameOptions.getChtOpacity(),
+					gameOptions.getBackgroundForChatOnly(), gameOptions.getChatOpacity(),
 					gameOptions.getChatLineSpacing(), gameOptions.getChatDelay(), gameOptions.getAutoJump(),
 					gameOptions.getSneakToggled(), gameOptions.getSprintToggled(),
 					gameOptions.getDistortionEffectScale(), gameOptions.getFovEffectScale(),
 					gameOptions.getMonochromeLogo(), gameOptions.getHideLightningFlashes(),
 					gameOptions.getDarknessEffectScale() };
 		return new SimpleOption[] { gameOptions.getShowSubtitles(), gameOptions.getTextBackgroundOpacity(),
-				gameOptions.getBackgroundForChatOnly(), gameOptions.getChtOpacity(), gameOptions.getChatLineSpacing(),
+				gameOptions.getBackgroundForChatOnly(), gameOptions.getChatOpacity(), gameOptions.getChatLineSpacing(),
 				gameOptions.getChatDelay(), gameOptions.getSneakToggled(), gameOptions.getSprintToggled(),
 				gameOptions.getDistortionEffectScale(), gameOptions.getFovEffectScale(),
 				gameOptions.getMonochromeLogo(), gameOptions.getHideLightningFlashes(),

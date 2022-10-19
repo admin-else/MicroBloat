@@ -1,43 +1,9 @@
-# Micro Bloat
+# Fabric Example Mod
 
-Micro Bloat is a mod that removes useless features.
+## Setup
 
-# Menu 
+For setup instructions please see the [fabric wiki page](https://fabricmc.net/wiki/tutorial:setup) that relates to the IDE that you are using.
 
-The menu will be in Accessibility settings page.
+## License
 
-# Features to Remove
-
- - Minecraft Realms
-
- - Language button in Title Screen
-
- - Accessibility button in Title Screen
-
- - Narrator
-
- - Auto-Jump
-
- - Remove Accessibility Guide
-
- - Replace Online... button with Allow Server Listings
-
- - Hide all button descriptions 
-
- - Replace Mouse Settings with Sensitivity
-
- - Remove Force Unicode
-
- - Remove non existend Languages
-
- - Remove agreement screens
-
- - Remove Give Feedback button
-
- - Remove Report Bugs button
-
- - Expand Options Button(if possible)
-
- - Remove all cancel buttons
-
- - Remove Score on Death Screen
+This template is available under the CC0 license. Feel free to learn from it and incorporate it in your own projects.
