@@ -14,9 +14,7 @@
     "OptionsScreenMixin",
     "AccessibilityOptionsScreenMixin",
     "ControlsOptionsScreenMixin",
-    "NarratorManagerMixin",
-    "TutorialToastMixin",
-    "RecipeToastMixin"
+    "ToastManagerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

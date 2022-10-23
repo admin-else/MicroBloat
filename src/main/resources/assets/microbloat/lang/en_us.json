@@ -36,6 +36,12 @@
 	"microbloat.setting.disenabled": "Disabled",
 	"microbloat.setting.tutorial": "Tutorial: %d",
 	"microbloat.setting.recipe_toast": "Recipe Toast: %d",
+	"microbloat.settings.toasts": "Toasts...",
+	"microbloat.setting.playerReporting_toast": "Chatreporting Toasts: %d",
+	"microbloat.setting.tutorial_toast": "Tutorial: %d",
+	"microbloat.setting.advancements_toast": "Advancements Toasts: %d",
+	"microbloat.setting.recipe_toast": "Recipe Toasts: %d",
+	"microbloat.setting.all_toasts": "All Toasts: %d",
 	
 	"test": "test"
 }

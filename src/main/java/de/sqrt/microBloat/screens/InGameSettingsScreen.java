@@ -19,9 +19,6 @@ public class InGameSettingsScreen extends Screen {
 	@Override
 	protected void init() {
 		addDrawableChild(Util.getSettingsButton("death_score", width / 2 - 155, this.height / 6 + 48 - 6, 150, true));
-		addDrawableChild(Util.getSettingsButton("tutorial", width / 2 + 5, height / 6 + 48 - 6, 150, true));
-		addDrawableChild(Util.getSettingsButton("recipe_toast", this.width / 2 - 155, this.height / 6 + 72 - 6,
-				150, true));
 
 		addDrawableChild(new ButtonWidget(width / 2 - 100, height / 6 + 168, 200, 20, ScreenTexts.DONE,
 				button -> client.setScreen(parent)));
