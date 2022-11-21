@@ -24,45 +24,77 @@ import net.minecraft.util.Identifier;
 @Mixin(TitleScreen.class)
 public class TitleScreenMixin extends Screen {
 
-	protected TitleScreenMixin(Text title) {
-		super(title);
-	}
+    protected TitleScreenMixin(Text title) {
+        super(title);
+    }
 
-	List<ClickableWidget> buttons = Screens.getButtons((Screen) (Object) this);
+    List<ClickableWidget> buttons = Screens.getButtons((Screen) (Object) this);
 
-	@Shadow
-	private String splashText;
-	@Shadow
-	@Final
-	@Mutable
-	private static Identifier EDITION_TITLE_TEXTURE = getEDITION_TITLE_TEXTURE();
+    private ClickableWidget multiplayerButton;
+    private ClickableWidget realmsButton;
+    private ClickableWidget optionsButton;
+    private ClickableWidget quitButton;
+    private ClickableWidget accessibilityButton;
+    private ClickableWidget languageButton;
 
-	@Inject(method = "init", at = @At("TAIL"))
-	protected void init(CallbackInfo info) {
-		if (Util.deleteButton(buttons, "menu.online")) {
-			Util.getButton(buttons, "options").y = this.height / 4 + 48 + 24 * 2;
-			Util.getButton(buttons, "quit").y = this.height / 4 + 48 + 24 * 2;
-			Util.getButton(buttons, "access").y = this.height / 4 + 48 + 24 * 2;
-			Util.getButton(buttons, "lang").y = this.height / 4 + 48 + 24 * 2;
-			this.client.options.getRealmsNotifications().setValue(false);
-		}
-		if (Util.deleteButton(buttons, "menu.quit")) {
-			Util.getButton(buttons, "options").setWidth(200);
-		}
-		if (ConfigHandler.get("splash") == SettingState.HIDDEN) {
-			splashText = null;
-		}
-		Util.deleteButton(buttons, "button.accessibility");
-		Util.deleteButton(buttons, "button.language");
-		Util.deleteButton(buttons, "Copyright");
-	}
+    @Shadow
+    private String splashText;
+    @Shadow
+    @Final
+    @Mutable
+    private static Identifier EDITION_TITLE_TEXTURE = getEDITION_TITLE_TEXTURE();
 
-	private static Identifier getEDITION_TITLE_TEXTURE() {
-		Identifier edition = new Identifier("textures/gui/title/edition.png");
-		if (ConfigHandler.get("edition") == SettingState.HIDDEN)
-			edition = new Identifier("microbloat", "textures/gui/title/edition_empty.png");
-		if (ConfigHandler.get("edition") == SettingState.SPECIAL)
-			edition = new Identifier("microbloat", "textures/gui/title/edition_safe_minecraft.png"); // EASTER EGG
-		return edition;
-	}
+    @Inject(method = "init", at = @At("TAIL"))
+    protected void init(CallbackInfo info) {
+
+        multiplayerButton = Util.getButton(buttons, "menu.multiplayer");
+        realmsButton = Util.getButton(buttons, "menu.online");
+        optionsButton = Util.getButton(buttons, "options");
+        quitButton = Util.getButton(buttons, "quit");
+        accessibilityButton = Util.getButton(buttons, "access");
+        languageButton = Util.getButton(buttons, "lang");
+
+        if (Util.deleteButton(buttons, "menu.singleplayer")) {
+            multiplayerButton.y -= 24;
+            realmsButton.y -= 24;
+            optionsButton.y -= 24;
+            quitButton.y -= 24;
+            accessibilityButton.y -= 24;
+            languageButton.y -= 24;
+        }
+
+        if (Util.deleteButton(buttons, "menu.multiplayer")) {
+            realmsButton.y -= 24;
+            optionsButton.y -= 24;
+            quitButton.y -= 24;
+            accessibilityButton.y -= 24;
+            languageButton.y -= 24;
+        }
+
+        if (Util.deleteButton(buttons, "menu.online")) {
+            optionsButton.y -= 24;
+            quitButton.y -= 24;
+            accessibilityButton.y -= 24;
+            languageButton.y -= 24;
+            this.client.options.getRealmsNotifications().setValue(false);
+        }
+        if (Util.deleteButton(buttons, "menu.quit")) {
+            Util.getButton(buttons, "options").setWidth(200);
+        }
+        if (ConfigHandler.get("splash") == SettingState.HIDDEN) {
+            splashText = null;
+        }
+        Util.deleteButton(buttons, "button.accessibility");
+        Util.deleteButton(buttons, "button.language");
+        Util.deleteButton(buttons, "Copyright");
+    }
+
+    private static Identifier getEDITION_TITLE_TEXTURE() {
+        Identifier edition = new Identifier("textures/gui/title/edition.png");
+        if (ConfigHandler.get("edition") == SettingState.HIDDEN)
+            edition = new Identifier("microbloat", "textures/gui/title/edition_empty.png");
+        if (ConfigHandler.get("edition") == SettingState.SPECIAL)
+            edition = new Identifier("microbloat", "textures/gui/title/edition_safe_minecraft.png"); // EASTER EGG
+        return edition;
+    }
 }

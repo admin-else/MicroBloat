@@ -28,7 +28,7 @@ public class ConfigHandler {
             "menu.quit", "Copyright", "edition", "splash", "background", "Telemetry", "death_score", "advancements",
             "stats", "sendFeedback", "reportBugs", "shareToLan", "difficulty_lock", "online", "options.difficulty",
             "accessibility_guide", "autoJump", "mouse_settings", "playerReporting", "tutorial_toast", "recipe_toast",
-            "advancements_toast", "playerReporting_toast", "all_toasts" };
+            "advancements_toast", "playerReporting_toast", "all_toasts", "menu.singleplayer", "menu.multiplayer"};
 
     private static void write() {
         try (final FileWriter fw = new FileWriter(CONFIG_PATH.toString()); final JsonWriter jw = new JsonWriter(fw)) {

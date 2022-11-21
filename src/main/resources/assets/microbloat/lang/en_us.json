@@ -42,6 +42,8 @@
 	"microbloat.setting.advancements_toast": "Advancements Toasts: %d",
 	"microbloat.setting.recipe_toast": "Recipe Toasts: %d",
 	"microbloat.setting.all_toasts": "All Toasts: %d",
+	"microbloat.setting.menu.singleplayer": "Singleplayer: %d",
+	"microbloat.setting.menu.multiplayer": "Multiplayer: %d",
 	
 	"test": "test"
 }
