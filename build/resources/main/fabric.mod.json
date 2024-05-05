@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "microbloat",
+  "version": "1.0.1",
+
+  "name": "Micro Bloat",
+  "description": "Removes useless features.",
+  "authors": [
+    "Admin_Else",
+    "Trolman"
+  ],
+  "contact": {
+    "sources": "https://github.com/admin-else/MicroBloat"
+  },
+
+  "license": "GLP-3",
+  "icon": "assets/microbloat/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "de.sqrt.microBloat.MicroBloat"
+    ]
+  },
+  "mixins": [
+    "micro-bloat.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.21",
+    "fabric": "*",
+    "minecraft": "~1.20.1",
+    "java": ">=17"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

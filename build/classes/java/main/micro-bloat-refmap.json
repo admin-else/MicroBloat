@@ -1,0 +1,62 @@
+{
+  "mappings": {
+    "de/sqrt/microBloat/mixin/AccessibilityOptionsScreenMixin": {
+      "initFooter": "Lnet/minecraft/class_4189;method_31387()V"
+    },
+    "de/sqrt/microBloat/mixin/ControlsOptionsScreenMixin": {
+      "init": "Lnet/minecraft/class_458;method_25426()V"
+    },
+    "de/sqrt/microBloat/mixin/DeathScreenMixin": {
+      "init": "Lnet/minecraft/class_418;method_25426()V"
+    },
+    "de/sqrt/microBloat/mixin/GameMenuScreenMixin": {
+      "initWidgets": "Lnet/minecraft/class_433;method_20543()V"
+    },
+    "de/sqrt/microBloat/mixin/OptionsScreenMixin": {
+      "init": "Lnet/minecraft/class_429;method_25426()V"
+    },
+    "de/sqrt/microBloat/mixin/RotatingCubeMapRendererMixin": {
+      "render": "Lnet/minecraft/class_766;method_3317(FF)V"
+    },
+    "de/sqrt/microBloat/mixin/TelemetryManagerMixin": {
+      "computeSender": "Lnet/minecraft/class_6628;method_47707()Lnet/minecraft/class_7965;"
+    },
+    "de/sqrt/microBloat/mixin/TitleScreenMixin": {
+      "init": "Lnet/minecraft/class_442;method_25426()V"
+    },
+    "de/sqrt/microBloat/mixin/ToastManagerMixin": {
+      "add": "Lnet/minecraft/class_374;method_1999(Lnet/minecraft/class_368;)V"
+    }
+  },
+  "data": {
+    "named:intermediary": {
+      "de/sqrt/microBloat/mixin/AccessibilityOptionsScreenMixin": {
+        "initFooter": "Lnet/minecraft/class_4189;method_31387()V"
+      },
+      "de/sqrt/microBloat/mixin/ControlsOptionsScreenMixin": {
+        "init": "Lnet/minecraft/class_458;method_25426()V"
+      },
+      "de/sqrt/microBloat/mixin/DeathScreenMixin": {
+        "init": "Lnet/minecraft/class_418;method_25426()V"
+      },
+      "de/sqrt/microBloat/mixin/GameMenuScreenMixin": {
+        "initWidgets": "Lnet/minecraft/class_433;method_20543()V"
+      },
+      "de/sqrt/microBloat/mixin/OptionsScreenMixin": {
+        "init": "Lnet/minecraft/class_429;method_25426()V"
+      },
+      "de/sqrt/microBloat/mixin/RotatingCubeMapRendererMixin": {
+        "render": "Lnet/minecraft/class_766;method_3317(FF)V"
+      },
+      "de/sqrt/microBloat/mixin/TelemetryManagerMixin": {
+        "computeSender": "Lnet/minecraft/class_6628;method_47707()Lnet/minecraft/class_7965;"
+      },
+      "de/sqrt/microBloat/mixin/TitleScreenMixin": {
+        "init": "Lnet/minecraft/class_442;method_25426()V"
+      },
+      "de/sqrt/microBloat/mixin/ToastManagerMixin": {
+        "add": "Lnet/minecraft/class_374;method_1999(Lnet/minecraft/class_368;)V"
+      }
+    }
+  }
+}

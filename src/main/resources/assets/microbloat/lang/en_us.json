@@ -1,0 +1,50 @@
+{ 
+	"microbloat.settings.title": "Microbloat...", //Settings button
+	"microbloat.settings.inGame": "In Game...",
+	"microbloat.settings.titleScreen": "Title Screen...",
+	"microbloat.settings.pause": "Pause Menu...",
+	"microbloat.settings.options": "Options...",
+	"microbloat.settings.microsoft": "Microsoft...",
+	"microbloat.setting.Copyright": "Copyright: %d", //Title
+	"microbloat.setting.menu.online": "Realms: %d", //Title
+	"microbloat.setting.button.accessibility": "Accessibility Button: %d", //Title
+	"microbloat.setting.button.language": "Language Button: %d", //Title
+	"microbloat.setting.menu.quit": "Quit Button: %d", //Title
+	"microbloat.setting.edition": "Edition: %d", //Title
+	"microbloat.setting.splash": "Splash Text: %d", //Title 
+	"microbloat.setting.background": "Background: %d", //Title
+	"microbloat.setting.background.noSpin": "No Spin",
+	"microbloat.setting.background.dirt": "Dirt",
+	"microbloat.setting.Telemetry": "Snoper: %d", //Micro Soft
+	"microbloat.setting.death_score": "Death Score: %d",//In Game
+	"microbloat.setting.advancements": "Advancements: %d", //Pase 
+	"microbloat.setting.stats": "Stats: %d", //Pause
+	"microbloat.setting.sendFeedback": "Send Feedback: %d", //PAUSE 
+	"microbloat.setting.reportBugs": "Report Bugs: %d", //PAUSE
+	"microbloat.setting.shareToLan": "Share to LAN: %d", //PAUSE
+	"microbloat.setting.playerReporting": "Chat Reporting Button: %d", //MICROSOFT
+	"microbloat.setting.difficulty_lock": "Difficulty Lock: %d", //OPTIONS
+	"microbloat.setting.online": "Online Settings: %d", //OPTIONS
+	"microbloat.setting.options.difficulty": "Difficulty: %d", //OPTIONS
+	"microbloat.setting.accessibility_guide": "Accessibility Guide: %d", //OPTIONS
+	"microbloat.setting.autoJump": "Auto Jump: %d", //OPTIONS
+	"microbloat.setting.autoJump.special": "Auto-Jump+",
+	"microbloat.setting.mouse_settings": "Mouse Settings: %d", //OPTIONS
+	"microbloat.settingstate.normal": "Normal",
+	"microbloat.settingstate.hidden": "Hidden",
+	"microbloat.settingstate.special": "Special",
+	"microbloat.setting.disenabled": "Disabled",
+	"microbloat.setting.tutorial": "Tutorial: %d",
+	"microbloat.setting.recipe_toast": "Recipe Toast: %d",
+	"microbloat.settings.toasts": "Toasts...",
+	"microbloat.setting.playerReporting_toast": "Chatreporting Toasts: %d",
+	"microbloat.setting.tutorial_toast": "Tutorial: %d",
+	"microbloat.setting.advancements_toast": "Advancements Toasts: %d",
+	"microbloat.setting.recipe_toast": "Recipe Toasts: %d",
+	"microbloat.setting.all_toasts": "All Toasts: %d",
+	"microbloat.setting.menu.singleplayer": "Singleplayer: %d",
+	"microbloat.setting.menu.multiplayer": "Multiplayer: %d",
+	
+	"test": "test"
+}
+

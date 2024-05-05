@@ -1,0 +1,8 @@
+v1	named	intermediary
+FIELD	de/sqrt/microBloat/mixin/TitleScreenMixin	Lnet/minecraft/client/gui/screen/SplashTextRenderer;	splashText	field_2586
+FIELD	de/sqrt/microBloat/mixin/RotatingCubeMapRendererMixin	Lnet/minecraft/client/MinecraftClient;	client	field_4139
+FIELD	de/sqrt/microBloat/mixin/RotatingCubeMapRendererMixin	Lnet/minecraft/client/gui/CubeMapRenderer;	cubeMap	field_4141
+FIELD	de/sqrt/microBloat/mixin/RotatingCubeMapRendererMixin	F	pitch	field_40510
+FIELD	de/sqrt/microBloat/mixin/RotatingCubeMapRendererMixin	F	yaw	field_40511
+FIELD	de/sqrt/microBloat/mixin/DeathScreenMixin	Lnet/minecraft/text/Text;	scoreText	field_26537
+METHOD	de/sqrt/microBloat/mixin/RotatingCubeMapRendererMixin	(FF)F	wrapOnce	method_45780
